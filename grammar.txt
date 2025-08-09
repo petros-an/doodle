@@ -1,0 +1,26 @@
+doodle : typedef
+       | doodle typedef
+
+typedef : NAME ARROW type_expr
+
+type_expr : primitive
+          | NAME
+          | schema_expr
+          | union_expr
+
+schema_expr : L_BRACKET inner_schema_expr R_BRACKET
+
+union_expr : NAME PIPE NAME
+
+inner_schema_expr : keyval_list
+
+keyval_list : keyval
+            | keyval_list COMMA keyval
+
+keyval : QUOTE NAME QUOTE COLON type_expr
+
+primitive : INT
+          | BOOL
+          | FLOAT
+          | STR
+          | UUID
