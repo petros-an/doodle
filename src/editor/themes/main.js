@@ -1,7 +1,7 @@
 import {createTheme} from "@uiw/codemirror-themes";
 
 
-const mainTheme = createTheme({
+const customTheme = createTheme({
     theme: 'dark',
     settings: {
         background: '#e8fffe',
@@ -16,4 +16,4 @@ const mainTheme = createTheme({
 
 });
 
-export default mainTheme
+export default customTheme

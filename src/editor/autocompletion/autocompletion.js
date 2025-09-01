@@ -53,6 +53,6 @@ const typesAutocompletion = context => {
 }
 
 
-const editorAutocompletion = autocompletion({override: [typesAutocompletion]})
+const JSLAutocompletion = autocompletion({override: [typesAutocompletion]})
 
-export default editorAutocompletion;
+export default JSLAutocompletion;

@@ -1,0 +1,15 @@
+#results_wrapper {
+    border: 1px solid black;
+    width: 30vw;
+    margin-right: 1vw;
+    margin-left: 2.5vw;
+
+    /*float: right;*/
+    height: 70vh;
+    background-color: #e8fffe;
+    overflow-y: scroll;
+
+    text-align: center;
+    display: inline-block;
+
+}

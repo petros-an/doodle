@@ -64,7 +64,9 @@ const typesLinter = linter(
                         return
                     } else if (c.name === 'EnumExpr') {
                         newIdentifierType = 'Enum'
-                    }else if (
+                    } else if (c.name === 'ListExpr') {
+                        newIdentifierType = 'List'
+                    } else if (
                         c.name === "FAKLITERAL"
                         || c.name === "IntLiteral"
                         || c.name === "FloatLiteral"
