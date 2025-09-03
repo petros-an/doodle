@@ -1,0 +1,30 @@
+#app {
+  /*border: 1px solid black;*/
+  width: 98vw;
+  height: 70vh;
+  margin-top: 5vh;
+}
+
+#editor_wrapper {
+  border: 1px solid black;
+  /*width: 35vw;*/
+  /*height: 70vh;*/
+  margin-left: 5vw;
+  /*margin-right: auto;*/
+  /*margin-top: 10vh;*/
+  /*display: inline;*/
+  /*position: relative;*/
+  float: left;
+  display: inline-block;
+}
+
+#title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 5vh;
+  color: black;
+  font-size: 300%;
+
+}
+

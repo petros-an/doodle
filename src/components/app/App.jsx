@@ -1,70 +1,37 @@
 import React from 'react';
 import './App.css'
 import Editor from "../editor/Editor.jsx";
-import TypeDetailContainer from "../typeDetails/typeDetailsContainer/typeDetailContainer.jsx";
-import Tools from "../tools/tools.jsx";
+import {Navigate, Route, Routes} from "react-router-dom";
+import About from "../about/about.jsx";
 
 
 
 function App() {
 
-    const [state, setState] = React.useState({
-        types: [],
-        extractSchema: null,
-    })
-
-    // console.log(state)
-
-    const editorRef = React.useRef(null);
+    const doodleId = crypto.randomUUID();
 
     return <>
-        <h1 id="title">Petros' schema editor</h1>
+        <h1 id="title">
+            <u>
+                Petros' JSON doodling editor
+
+            </u>
+        </h1>
         <div id="app">
 
 
-
-            <div id="editor_wrapper">
-                <Editor
-                    onTypesListChange={
-                        (typesList) => {
-                            setState({
-                                types: typesList,
-                                extractSchema: state.extractSchema
-                            })
-                        }
-                    }
-                    onExtractSchemaFound={
-                        (schema) => {
-                            setState(
-                                prevState => {
-                                    return {
-                                        ...prevState,
-                                        extractSchema: schema,
-                                        types: prevState.types
-                                    }
-                                }
-                            )
-                        }
-                    }
-
-                    ref={editorRef}
+            <Routes>
+                <Route path="/about" element={<About/>}/>
+                <Route
+                    path="/editor/:doodleId"
+                    element={<Editor/>}
                 />
-            </div>
+                <Route path="/" element={<Navigate to={`/editor/${doodleId}`}></Navigate>}/>
 
-            <TypeDetailContainer
-                types={state.types}
 
-                onRenameClick={
-                    (typeName, renameText) => {
-                        editorRef.renameHandler(typeName, renameText)
-                    }
-                }
-            />
 
-            <Tools
-                extractSchema={state.extractSchema}
-                editorRef={editorRef}
-            />
+
+            </Routes>
 
         </div>
 

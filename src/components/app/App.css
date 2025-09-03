@@ -1,22 +1,11 @@
 #app {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   width: 98vw;
   height: 70vh;
   margin-top: 5vh;
 }
 
-#editor_wrapper {
-  border: 1px solid #5c594e;
-  /*width: 35vw;*/
-  /*height: 70vh;*/
-  /*margin-left: 1vw;*/
-  /*margin-right: auto;*/
-  /*margin-top: 10vh;*/
-  /*display: inline;*/
-  /*position: relative;*/
-  float: left;
-  display: inline-block;
-}
+
 
 #title {
   margin-left: auto;

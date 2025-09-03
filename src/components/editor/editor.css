@@ -1,0 +1,6 @@
+#editor_wrapper {
+  border: 1px solid black;
+  margin-left: 5vw;
+  float: left;
+  display: inline-block;
+}
