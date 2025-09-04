@@ -1,6 +1,6 @@
 import {EditorView} from "@uiw/react-codemirror";
 import {syntaxTree} from "@codemirror/language";
-import Types from "../../language/types"
+import Types from "../../language/types.js"
 
 
 const makeUpdateListener = (onExtractSchemaFound) => {

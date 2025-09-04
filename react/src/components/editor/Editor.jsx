@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import JSLLanguageSupport from "../../language/jsl.js";
 import JSLAutocompletion from "../../editor/autocompletion/autocompletion.js";
@@ -13,6 +13,7 @@ import './editor.css'
 import TypeDetailContainer from "../typeDetails/typeDetailsContainer/typeDetailContainer.jsx";
 import Tools from "../tools/tools.jsx";
 import {useParams} from "react-router-dom";
+import DoodleService from "../../services/doodle.js";
 
 function findTypesFromState(state) {
     const tree = syntaxTree(state)
@@ -88,31 +89,55 @@ function extractSchema(editorRef, schema) {
 
 }
 
-
 function Editor() {
 
-    const [value, _] = React.useState(
-        "x -> {\n" +
-        "  \"a\": \"b\"\n" +
-        "}"
+    const [state, setState] = React.useState(
+        {
+            text: "",
+            loading: true,
+            types: [],
+            extractSchema: null,
+        }
     );
 
-    // const {doodleId} = useParams()
+    const {doodleId} = useParams()
 
+    const {text, loading} = state
 
-    const [state, setState] = React.useState({
-        types: [],
-        extractSchema: null,
-    })
+    useEffect(() => {
+        DoodleService.getOrCreate(doodleId, text).then(
+            (doodle) => {
+                setState(
+                    prevState => {
+                        return {
+                            ...prevState,
+                            loading: false,
+                            text: doodle.text,
+                        }
+                    }
+                )
+            }
+        )
+
+    }, []);
 
 
     const editorRef = React.useRef(null);
 
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
+
     const onTypesListChange = (typesList) => {
-        setState({
-            types: typesList,
-            extractSchema: state.extractSchema
-        })
+        setState(
+            prevState => {
+                return {
+                    ...prevState,
+                    types: typesList,
+                }
+            }
+        )
     }
 
     const onExtractSchemaFound = (schema) => {
@@ -129,20 +154,36 @@ function Editor() {
 
 
     const onEditorChange = (text, update) => {
+        editorRef.text = text
         const typesList = findTypesFromState(update.state)
         onTypesListChange(typesList)
     }
 
     editorRef.renameHandler = (typeName, value) => rename(editorRef, typeName, value)
 
-    editorRef.extractSchema = (schema) =>extractSchema(editorRef, schema)
+    editorRef.extractSchema = (schema) => extractSchema(editorRef, schema)
 
+    editorRef.saveSchema = () => {
+        DoodleService.save(doodleId, editorRef.text).then(
+            (doodle) => {
+                setState(
+                    prevState => {
+                        return {
+                            ...prevState,
+                            loading: false,
+                            text: doodle.text,
+                        }
+                    }
+                )
+            }
+        )
+    }
 
     return <>
         <div id={"editor_wrapper"}>
             <CodeMirror
                 theme={customTheme}
-                value={value}
+                value={text}
                 height="70vh"
                 width="45vw"
                 extensions={

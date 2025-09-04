@@ -1,5 +1,5 @@
 import './tools.css'
-import ExtractButton from "./extractButton/extractButton.jsx";
+import SaveButton from "./saveButton/saveButton.jsx";
 
 function Tools(props) {
     return <div id="tools">
@@ -11,6 +11,9 @@ function Tools(props) {
                 editorRef={props.editorRef}
             />
         }
+        <SaveButton
+            editorRef={props.editorRef}
+        />
     </div>
 }
 
