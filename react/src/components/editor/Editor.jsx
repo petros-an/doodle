@@ -200,6 +200,9 @@ function Editor() {
                 onCreateEditor={
                     view => {
                         editorRef.view = view
+                        editorRef.text = text
+                        const typesList = findTypesFromState(view.state)
+                        onTypesListChange(typesList)
                     }
                 }
             />
