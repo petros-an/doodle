@@ -6,8 +6,8 @@ ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
 COPY . .
+RUN npm install
 RUN npm run build
 
 # Production stage
@@ -18,7 +18,7 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
-
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
