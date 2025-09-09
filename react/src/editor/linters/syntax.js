@@ -5,6 +5,9 @@ import {syntaxTree} from "@codemirror/language";
 const syntaxLinter = linter(view => {
     let diagnostics= []
     syntaxTree(view.state).cursor().iterate(node => {
+        if (view.state.doc.text.length === 0) {
+            return
+        }
         if (view.state.doc.text[0] === '') {
             return
         }

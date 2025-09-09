@@ -25,9 +25,7 @@ const typesLinter = linter(
                                 "message": "Unknown type: " + newIdentifierType,
                             });
                         }
-                        else {
-                            console.log('Known Type: ' + newIdentifierType)
-                        }
+
                     }
 
 

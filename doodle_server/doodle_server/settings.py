@@ -142,3 +142,36 @@ CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ORIGIN_WHITELIST = [
 #     'http://localhost:8000',
 # ]
+
+DEFAULT_DOODLE_TEXT = """price -> float 
+ProductId -> UUID 
+StoreId -> UUID
+date -> string
+
+
+category -> Enum(
+  "pantry",
+  "household_supplies",
+  "personal_care",
+  "drinks"
+)
+
+Store -> {
+  "id": StoreId,
+  "name": string
+}
+  
+ProductStoreAvailability -> {
+  "store_id": StoreId,
+  "count": int
+}
+
+Product -> {
+  "id": ProductId,
+  "name": string,
+  "price": price,
+  "expiration_date": date,
+  "category": category,
+  "availability": list[ProductStoreAvailability]
+}
+"""

@@ -3,7 +3,7 @@ class DoodleService {
 
 
     static async getOrCreate(doodleId) {
-        const backendUrl = import.meta.env.VITE_BACKEND_URL
+        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
         const res = await fetch(
             `${backendUrl}/doodle/${doodleId}`,
             {
@@ -22,7 +22,7 @@ class DoodleService {
     }
 
     static async save(doodleId, text) {
-        const backendUrl = import.meta.env.VITE_BACKEND_URL
+        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
         const res = await fetch(
             `${backendUrl}/doodle/${doodleId}`,
             {

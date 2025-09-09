@@ -1,5 +1,6 @@
 import './tools.css'
 import SaveButton from "./saveButton/saveButton.jsx";
+import AboutButton from "./aboutButton/aboutButton.jsx";
 
 function Tools(props) {
     return <div id="tools">
@@ -14,6 +15,7 @@ function Tools(props) {
         <SaveButton
             editorRef={props.editorRef}
         />
+        <AboutButton/>
     </div>
 }
 

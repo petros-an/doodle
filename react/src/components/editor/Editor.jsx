@@ -93,7 +93,7 @@ function Editor() {
 
     const [state, setState] = React.useState(
         {
-            text: "",
+            text: '',
             loading: true,
             types: [],
             extractSchema: null,
@@ -105,7 +105,7 @@ function Editor() {
     const {text, loading} = state
 
     useEffect(() => {
-        DoodleService.getOrCreate(doodleId, text).then(
+        DoodleService.getOrCreate(doodleId).then(
             (doodle) => {
                 setState(
                     prevState => {

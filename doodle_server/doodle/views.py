@@ -3,6 +3,7 @@ import uuid
 from json import JSONDecodeError
 
 from django import views
+from django.conf import settings
 from django.core.serializers.base import DeserializationError
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render
@@ -17,6 +18,9 @@ class DoodleView(views.View):
 
         doodle, created = Doodle.objects.get_or_create(
             id=doodle_id,
+            defaults={
+                'text': settings.DEFAULT_DOODLE_TEXT
+            }
         )
         return JsonResponse(
             status=(201 if created else 200),
