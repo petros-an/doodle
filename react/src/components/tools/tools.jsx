@@ -2,6 +2,7 @@ import './tools.css'
 import SaveButton from "./saveButton/saveButton.jsx";
 import AboutButton from "./aboutButton/aboutButton.jsx";
 import ShareButton from "./shareButton/shareButton.jsx";
+import ExtractButton from "./extractButton/extractButton.jsx";
 
 function Tools(props) {
     return <div id="tools">
