@@ -1,6 +1,7 @@
 import './tools.css'
 import SaveButton from "./saveButton/saveButton.jsx";
 import AboutButton from "./aboutButton/aboutButton.jsx";
+import ShareButton from "./shareButton/shareButton.jsx";
 
 function Tools(props) {
     return <div id="tools">
@@ -16,6 +17,7 @@ function Tools(props) {
             editorRef={props.editorRef}
         />
         <AboutButton/>
+        <ShareButton doodleId={props.doodleId}/>
     </div>
 }
 

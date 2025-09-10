@@ -1,0 +1,10 @@
+#readonly {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    margin: 0 0 0 0 ;
+
+}

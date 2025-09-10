@@ -219,6 +219,7 @@ function Editor() {
         />
 
         <Tools
+            doodleId={doodleId}
             extractSchema={state.extractSchema}
             editorRef={editorRef}
         />

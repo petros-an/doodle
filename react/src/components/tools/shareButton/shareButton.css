@@ -1,0 +1,30 @@
+#share_button {
+    padding: 1.2%;
+    font-weight: bold;
+    font-size: 110%;
+    border: 1px solid black;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color: lightgoldenrodyellow;
+    display: inline-block;
+    margin-left: 0.5vw;
+}
+
+#share_button:hover {
+    cursor: pointer;
+}
+
+#share_content {
+    position: fixed;
+    left: 26vw;
+    top: 80vh;
+    border: 1px solid black;
+    padding: 1%;
+    margin-top: 1vh;
+    margin-left: auto;
+    background-color: white;
+}
+
+.copy_button:hover {
+    cursor: pointer;
+}
