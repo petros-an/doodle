@@ -65,7 +65,7 @@ Book -> {
             To declare a primitive type:
             <pre className={"codesnippet"}>
                 <code>
-                    date {"->"} string
+                    x {"->"} string
                     # or int, bool, float, UUID
                 </code>
             </pre>
@@ -86,7 +86,7 @@ Book -> {
             </pre>
             Or a full JSON object:
             <pre className={"codesnippet"}>
-                <code>{`{
+                <code>{`x -> {
     "key1": type1,
     "key2": type2
 }
