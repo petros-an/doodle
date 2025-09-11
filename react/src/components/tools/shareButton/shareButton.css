@@ -9,8 +9,10 @@
 
 #share_content {
     border: 1px solid black;
-    margin-left: 9vw;
+    margin-left: 1vw;
+    margin-top: 1vh;
     background-color: white;
+    padding: 3%;
     width: 33vw;
     text-align: justify;
 }

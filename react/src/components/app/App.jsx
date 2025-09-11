@@ -26,7 +26,7 @@ function App() {
             id="title"
         >
             <u>
-                Petros' JSON doodling editor
+               JDL Editor
             </u>
         </h1>
         <div id="app">
