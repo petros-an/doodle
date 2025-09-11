@@ -1,12 +1,32 @@
 #tools {
-    width: 33vw;
+    width: 10vw;
     padding: 0;
-    margin-top: 2vh;
-    margin-left: 5vw;
+    margin-top: 1vh;
+    margin-left: 0.25vw;
+    /*margin-left: 5vw;*/
+    position: absolute;
 
-    float: left;
+    /*float: left;*/
 }
 
 .tool_button {
+    padding: 1.2%;
+    /*padding-top: 1vh;*/
+    font-weight: bold;
+    /*font-size: 110%;*/
+    border: 1px solid black;
+    border-radius: 20px;
     margin-right: 1vw;
+    display: flex;
+    justify-content: center;
+    width: 6vw;
+    margin-left: 0.5vw;
+    margin-top: 1vh;
+    height: 4vh;
+    align-items: center;
+
+}
+
+.tool_button * {
+    /*margin-left: 4vw;*/
 }

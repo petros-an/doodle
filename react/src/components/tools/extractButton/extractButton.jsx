@@ -1,5 +1,6 @@
 import './extractButton.css'
 import { FcIdea } from "react-icons/fc";
+import {FaRegLightbulb} from "react-icons/fa";
 
 
 function ExtractButton(props) {
@@ -14,7 +15,7 @@ function ExtractButton(props) {
             }
         }
     >
-        <FcIdea/> Extract
+        <FaRegLightbulb/> Extract
     </span>
 }
 

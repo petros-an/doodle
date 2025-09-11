@@ -185,8 +185,8 @@ function Editor() {
                 <CodeMirror
                     theme={customTheme}
                     value={text}
-                    height="70vh"
-                    width="40vw"
+                    height="82vh"
+                    width="65vw"
                     extensions={
                         [
                             JSLLanguageSupport,
