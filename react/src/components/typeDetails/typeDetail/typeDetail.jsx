@@ -43,7 +43,7 @@ function TypeDetail(props) {
                     size={4}
                     className="typeDetailRename"
                     type="text"
-                    value={"rename"}
+                    value={state.renameText === null ? "rename" : state.renameText}
                     onChange={
                         (event) => setState({
                             renameText: event.target.value,

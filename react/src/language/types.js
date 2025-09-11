@@ -8,7 +8,6 @@ function analyzeTypes(tree, state, getText) {
                 c.firstChild()
                 const newIdentifierName = getText(c.from, c.to)
                 const typeDefFrom = c.from
-                console.log(typeDefFrom)
 
                 c.nextSibling()
                 c.nextSibling()

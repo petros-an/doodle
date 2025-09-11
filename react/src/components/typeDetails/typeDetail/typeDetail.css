@@ -7,7 +7,7 @@
     vertical-align: top;
     display: inline-block;
     border: 1px solid black;
-    border-radius: 100px;
+    /*border-radius: 0px;*/
 }
 
 .typeDetailTitle {
@@ -40,9 +40,9 @@
 }
 
 .t-UUID {
-    background-color: yellow;
+    background-color: lightgoldenrodyellow;
 }
 
 .t-Enum {
-    background-color: orange;
+    background-color: thistle;
 }
