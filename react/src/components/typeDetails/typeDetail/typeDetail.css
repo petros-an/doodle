@@ -6,9 +6,9 @@
     margin-bottom: 2vh;
     vertical-align: top;
     display: inline-block;
-    background-color: rgba(5,86,92,0.59);
+    background-color: lightblue;
     border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 100px;
 }
 
 .typeDetailTitle {
