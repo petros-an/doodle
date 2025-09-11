@@ -15,13 +15,18 @@ function generateUUID() {
 
 function App() {
 
-    const doodleId = generateUUID()
+    let doodleId = localStorage.getItem("currentDoodleId")
+    if (!doodleId) {
+        doodleId = generateUUID()
+        localStorage.setItem("currentDoodleId", doodleId)
+    }
 
     return <>
-        <h1 id="title">
+        <h1
+            id="title"
+        >
             <u>
                 Petros' JSON doodling editor
-
             </u>
         </h1>
         <div id="app">

@@ -1,0 +1,12 @@
+#new_button {
+    padding: 1.2%;
+    font-weight: bold;
+    font-size: 110%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+}
+
+#new_button:hover {
+    cursor: pointer;
+}

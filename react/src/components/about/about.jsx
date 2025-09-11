@@ -48,52 +48,46 @@ Book -> {
             </code>
         </pre>
 
-        <p>
-            <strong>JDL</strong> specifies the syntax for how that definition should look like,
-            in order to standardize it and allow use of tools commonly available for all programming languages.
-            For example, in the <a href={"/"}>Editor</a> we have:
-            <ul>
-                <li>Syntax highlighting</li>
-                <li>Highlighting of errors, for example duplicate definitions</li>
-                <li>Autocompletion</li>
-                <li>Refactoring tools: renaming of a type, extracting a block of code (subschema)</li>
-            </ul>
+        <strong>JDL</strong> specifies the syntax for how that definition should look like,
+        in order to standardize it and allow use of tools commonly available for all programming languages.
+        For example, in the <a href={"/"}>Editor</a> we have:
+        <ul>
+            <li>Syntax highlighting</li>
+            <li>Highlighting of errors, for example duplicate definitions</li>
+            <li>Autocompletion</li>
+            <li>Refactoring tools: renaming of a type, extracting a block of code (subschema)</li>
+        </ul>
 
-        </p>
 
-        <p>
-            To declare a primitive type:
-            <pre className={"codesnippet"}>
-                <code>
-                    x {"->"} string
-                    # or int, bool, float, UUID
-                </code>
-            </pre>
-        </p>
+        To declare a primitive type:
+        <pre className={"codesnippet"}>
+            <code>
+                x {"->"} string
+                # or int, bool, float, UUID
+            </code>
+        </pre>
 
-        <p>
-            Enums:
-            <pre className={"codesnippet"}>
-                <code>
-                    x {"->"} Enum("a", "b", "c)
-                </code>
-            </pre>
-            Lists:
-            <pre className={"codesnippet"}>
-                <code>
-                    x {"->"} list[string]
-                </code>
-            </pre>
-            Or a full JSON object:
-            <pre className={"codesnippet"}>
-                <code>{`x -> {
-    "key1": type1,
-    "key2": type2
+        Enums:
+        <pre className={"codesnippet"}>
+            <code>
+                x {"->"} Enum("a", "b", "c)
+            </code>
+        </pre>
+        Lists:
+        <pre className={"codesnippet"}>
+            <code>
+                x {"->"} list[string]
+            </code>
+        </pre>
+        Or a full JSON object:
+        <pre className={"codesnippet"}>
+            <code>{`x -> {
+"key1": type1,
+"key2": type2
 }
 `}
-                </code>
-            </pre>
-        </p>
+            </code>
+        </pre>
 
         <p>
             The full specification (language grammar) for JDL is <a href={""}>here</a>
