@@ -12,6 +12,7 @@ function TypeDetailContainer(props) {
                         type={type}
                         onClick={props.onResultTypeClick}
                         onRenameClick={props.onRenameClick}
+                        editorRef={props.editorRef}
                     />
                 )
             )

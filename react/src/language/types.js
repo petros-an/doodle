@@ -1,4 +1,4 @@
-function analyzeTypes(tree, getText) {
+function analyzeTypes(tree, state, getText) {
     const typesMap = {}
 
     tree.iterate({
@@ -7,6 +7,8 @@ function analyzeTypes(tree, getText) {
                 let c = node.node.cursor()
                 c.firstChild()
                 const newIdentifierName = getText(c.from, c.to)
+                const typeDefFrom = c.from
+                console.log(typeDefFrom)
 
                 c.nextSibling()
                 c.nextSibling()
@@ -37,7 +39,14 @@ function analyzeTypes(tree, getText) {
                 } else {
                     throw new Error('Unknown type' + c.name)
                 }
-                typesMap[newIdentifierName] = newIdentifierType
+
+                typesMap[newIdentifierName] = {
+                    type: newIdentifierType,
+                    from: typeDefFrom,
+                    to: c.to,
+                }
+
+
             }
         }
     })
@@ -46,7 +55,11 @@ function analyzeTypes(tree, getText) {
         key => (
             {
                 name: key,
-                type: typesMap[key]
+                type: typesMap[key].type,
+                start: typesMap[key].start,
+                end: typesMap[key].end,
+                from: typesMap[key].from,
+                to: typesMap[key].to,
             }
         )
     )

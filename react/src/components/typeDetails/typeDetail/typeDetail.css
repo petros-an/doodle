@@ -1,12 +1,11 @@
 .typeDetail {
     /*min-width: 10vw;*/
-    padding: 2%;
+    padding: 3%;
     font-size: 120%;
     margin-right: 1vw;
     margin-bottom: 2vh;
     vertical-align: top;
     display: inline-block;
-    background-color: lightblue;
     border: 1px solid black;
     border-radius: 100px;
 }
@@ -26,4 +25,24 @@
 
 .typeDetailRename {
 
+}
+
+.t-Schema {
+    background-color: lightblue;
+}
+
+.t-float {
+    background-color: green;
+}
+
+.t-string {
+    background-color: mediumseagreen;
+}
+
+.t-UUID {
+    background-color: yellow;
+}
+
+.t-Enum {
+    background-color: orange;
 }

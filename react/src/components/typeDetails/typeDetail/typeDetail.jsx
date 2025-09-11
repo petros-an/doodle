@@ -10,16 +10,27 @@ function TypeDetail(props) {
     })
 
     return <div
-        className="typeDetail"
-
+        className={`typeDetail t-${props.type.type}`}
     >
         <span
-            className="typeDetailTitle"
+            className={"typeDetailTitle"}
             onClick={
                 () => setState({
                     isOpened: !state.isOpened,
                     renameText: props.type.name
                 })
+            }
+            onMouseEnter={
+                () => {
+                    props.editorRef.selectText(
+                        props.type.from, props.type.to
+                    )
+                }
+            }
+            onMouseLeave={
+                () => {
+                    props.editorRef.clearSelection()
+                }
             }
         >
             {props.type.name} : {props.type.type}

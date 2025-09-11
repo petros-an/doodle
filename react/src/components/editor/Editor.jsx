@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import CodeMirror from '@uiw/react-codemirror';
+import CodeMirror, {Decoration} from '@uiw/react-codemirror';
 import JSLLanguageSupport from "../../language/jsl.js";
 import JSLAutocompletion from "../../editor/autocompletion/autocompletion.js";
 import JSLSyntaxHighlighting from "../../editor/highlighting/highlighting.js";
@@ -14,11 +14,15 @@ import TypeDetailContainer from "../typeDetails/typeDetailsContainer/typeDetailC
 import Tools from "../tools/tools.jsx";
 import {useParams} from "react-router-dom";
 import DoodleService from "../../services/doodle.js";
+import {EditorSelection, StateEffect} from "@codemirror/state";
+import {EditorView } from "@codemirror/view";
+import { StateField, RangeSetBuilder } from "@codemirror/state";
 
 function findTypesFromState(state) {
     const tree = syntaxTree(state)
     return analyzeTypes(
         tree,
+        state,
         (from, to) => state.doc.sliceString(from, to)
     )
 }
@@ -87,6 +91,29 @@ function extractSchema(editorRef, schema) {
         },
     });
 
+}
+
+function selectText(editorRef, from, to) {
+    const sel = EditorSelection.range(from, to);
+
+
+    // Create a StateField to hold the decorations
+    editorRef.view.dispatch({
+        selection: sel,
+        scrollIntoView: true,
+        userEvent: "select"
+    });
+
+}
+
+function clearSelection(editorRef) {
+    const currentPos = editorRef.view.state.selection.main.head;
+
+    editorRef.view.dispatch({
+        selection: EditorSelection.cursor(currentPos),
+        scrollIntoView: true,
+        userEvent: "select.clear"
+    });
 }
 
 function Editor() {
@@ -163,6 +190,10 @@ function Editor() {
 
     editorRef.extractSchema = (schema) => extractSchema(editorRef, schema)
 
+    editorRef.selectText = (from, to) => selectText(editorRef, from, to)
+
+    editorRef.clearSelection = () => {clearSelection(editorRef)}
+
     editorRef.saveSchema = () => {
         DoodleService.save(doodleId, editorRef.text).then(
             (doodle) => {
@@ -211,7 +242,7 @@ function Editor() {
             </span>
             <TypeDetailContainer
                 types={state.types}
-
+                editorRef={editorRef}
                 onRenameClick={
                     (typeName, renameText) => {
                         editorRef.renameHandler(typeName, renameText)
