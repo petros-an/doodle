@@ -180,44 +180,45 @@ function Editor() {
     }
 
     return <>
-        <div id={"editor_wrapper"}>
-            <CodeMirror
-                theme={customTheme}
-                value={text}
-                height="70vh"
-                width="45vw"
-                extensions={
-                    [
-                        JSLLanguageSupport,
-                        JSLSyntaxHighlighting,
-                        syntaxLinter,
-                        typesLinter,
-                        JSLAutocompletion,
-                        makeUpdateListener(onExtractSchemaFound)
-                    ]
-                }
-                onChange={onEditorChange}
-                onCreateEditor={
-                    view => {
-                        editorRef.view = view
-                        editorRef.text = text
-                        const typesList = findTypesFromState(view.state)
-                        onTypesListChange(typesList)
+        <div id={"fuckme"}>
+            <span id={"editor_wrapper"}>
+                <CodeMirror
+                    theme={customTheme}
+                    value={text}
+                    height="70vh"
+                    width="40vw"
+                    extensions={
+                        [
+                            JSLLanguageSupport,
+                            JSLSyntaxHighlighting,
+                            syntaxLinter,
+                            typesLinter,
+                            JSLAutocompletion,
+                            makeUpdateListener(onExtractSchemaFound)
+                        ]
+                    }
+                    onChange={onEditorChange}
+                    onCreateEditor={
+                        view => {
+                            editorRef.view = view
+                            editorRef.text = text
+                            const typesList = findTypesFromState(view.state)
+                            onTypesListChange(typesList)
+                        }
+                    }
+                />
+
+            </span>
+            <TypeDetailContainer
+                types={state.types}
+
+                onRenameClick={
+                    (typeName, renameText) => {
+                        editorRef.renameHandler(typeName, renameText)
                     }
                 }
             />
-
         </div>
-        <TypeDetailContainer
-            types={state.types}
-
-            onRenameClick={
-                (typeName, renameText) => {
-                    editorRef.renameHandler(typeName, renameText)
-                }
-            }
-        />
-
         <Tools
             doodleId={doodleId}
             extractSchema={state.extractSchema}

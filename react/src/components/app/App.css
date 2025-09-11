@@ -1,19 +1,27 @@
 #app {
   /*border: 1px solid black;*/
-  width: 98vw;
-  height: 70vh;
-  margin-top: 5vh;
+  width: 90vw;
+  height: 80vh;
+  margin-left: 7vw;
 }
-
 
 
 #title {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 2vh;
   color: black;
   font-size: 300%;
+  width: 50vw;
 
 }
 
+
+#footer {
+  background-color: #2b5047;
+  border: 1px solid black;
+  height: 8.4vh;
+  text-align: center;
+
+}

@@ -1,22 +1,33 @@
 import './saveButton.css'
 import {IoIosSave} from "react-icons/io";
 import React from "react";
-import {FaCheckSquare} from "react-icons/fa";
+import {FaCheckSquare, FaSpinner} from "react-icons/fa";
 
 function SaveButton(props) {
     const [state, setState] = React.useState({
-        isSaved: false
+        isSaved: false,
+        loading: false
     })
     return <span
         id="save_button"
+        className={"tool_button"}
         onClick={
-            () => {
+            async () => {
+                setState(
+                    state => {
+                        return {
+                            ...state,
+                            loading: true
+                        }
+                    }
+                )
                 props.editorRef.saveSchema()
                 setState(
                     state => {
                         return {
                             ...state,
-                            isSaved: true
+                            isSaved: true,
+                            loading: false
                         }
                     }
                 )
@@ -38,6 +49,10 @@ function SaveButton(props) {
         }
     >
         <IoIosSave /> Save
+        {
+            state.loading && <FaSpinner/>
+
+        }
         {
             state.isSaved &&
                 <FaCheckSquare/>

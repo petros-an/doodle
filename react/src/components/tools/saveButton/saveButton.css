@@ -3,11 +3,8 @@
     font-weight: bold;
     font-size: 110%;
     border: 1px solid black;
-    margin-top: 1%;
     border-radius: 5px;
-    background-color: lightgreen;
-    /*display: inline-block;*/
-    /*height: 1vh;*/
+    background-color: mediumseagreen;
 }
 
 #save_button:hover {

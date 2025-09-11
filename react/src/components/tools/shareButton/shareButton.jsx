@@ -14,6 +14,7 @@ function ShareButton(props) {
     const readonly = `${window.location.origin}/readonly/${props.doodleId}`
     return <>
         <span
+            className={"tool_button"}
             id={"share_button"}
             onClick={
                 () => {

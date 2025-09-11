@@ -1,8 +1,12 @@
 #tools {
-    /*margin-left: 1vw;*/
-    margin-top: 0.5vh;
-    /*border: 1px solid black;*/
     width: 33vw;
-    height: 10vh;
-    text-align: center;
+    padding: 0;
+    margin-top: 2vh;
+    margin-left: 5vw;
+
+    float: left;
+}
+
+.tool_button {
+    margin-right: 1vw;
 }

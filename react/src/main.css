@@ -1,9 +1,14 @@
 :root {
   background-color: rgba(48,92,51,0.54);
-
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
 .codesnippet {
    background-color: #e8fffe;

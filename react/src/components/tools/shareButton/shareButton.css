@@ -3,11 +3,8 @@
     font-weight: bold;
     font-size: 110%;
     border: 1px solid black;
-    margin-top: 1%;
     border-radius: 5px;
     background-color: lightgoldenrodyellow;
-    display: inline-block;
-    margin-left: 0.5vw;
 }
 
 #share_button:hover {
@@ -15,14 +12,19 @@
 }
 
 #share_content {
-    position: fixed;
-    left: 26vw;
-    top: 80vh;
     border: 1px solid black;
-    padding: 1%;
-    margin-top: 1vh;
-    margin-left: auto;
+    margin-left: 9vw;
     background-color: white;
+    width: 33vw;
+    text-align: justify;
+}
+
+#share_content p {
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    padding: 0;
+
 }
 
 .copy_button:hover {

@@ -1,13 +1,13 @@
 .typeDetail {
-    min-width: 10vw;
+    /*min-width: 10vw;*/
     padding: 1%;
     font-size: 120%;
-    margin-left: 2vw;
-    margin-top: 1vh;
-    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: top;
     display: inline-block;
-    border: 1px solid black;
     background-color: rgba(5,86,92,0.59);
+    border: 1px solid black;
 }
 
 .typeDetailTitle {
@@ -24,6 +24,5 @@
 }
 
 .typeDetailRename {
-    width: 5vw
 
 }

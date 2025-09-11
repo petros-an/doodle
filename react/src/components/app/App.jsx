@@ -42,6 +42,10 @@ function App() {
 
         </div>
 
+        <footer id={"footer"}>
+
+        </footer>
+
     </>
 }
 

@@ -5,6 +5,7 @@ import {FaInfoCircle} from "react-icons/fa";
 
 function AboutButton(props) {
     return <span
+        className={"tool_button"}
         id={"about_button"}
         onClick={
             () => {

@@ -1,18 +1,19 @@
 #results_wrapper {
     /*border: 3px dashed black;*/
     border: 1px solid black;
-    border-radius: 10px;
-    padding: 2%;
-    height: 62vh;
-    width: 35vw;
-    margin-right: 1vw;
-    margin-left: 4vw;
+    /*border-radius: 10px;*/
+    padding: 1%;
+    height: 67vh;
+    width: 30vw;
+    /*margin-right: 1vw;*/
+    margin-left: 2vw;
+    float: left;
 
     background-color: #e8fffe;
 
-    overflow-y: auto;
+    overflow-y: scroll;
 
     text-align: center;
-    display: inline-block;
-
+    /*display: inline;*/
+    /*float: left;*/
 }

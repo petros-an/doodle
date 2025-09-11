@@ -1,6 +1,7 @@
 import React from "react";
 import "./typeDetail.css"
 import {IoIosArrowDropdown, IoIosArrowDropup} from "react-icons/io";
+import {FaRegArrowAltCircleRight} from "react-icons/fa";
 
 function TypeDetail(props) {
     const [state, setState] = React.useState({
@@ -10,42 +11,28 @@ function TypeDetail(props) {
 
     return <div
         className="typeDetail"
+
     >
-        <span className="typeDetailTitle">
+        <span
+            className="typeDetailTitle"
+            onClick={
+                () => setState({
+                    isOpened: !state.isOpened,
+                    renameText: props.type.name
+                })
+            }
+        >
             {props.type.name} : {props.type.type}
         </span>
-
-        {
-            !state.isOpened &&
-            <IoIosArrowDropdown
-                onClick={
-                    () => setState({
-                        isOpened: true,
-                        renameText: props.type.name
-                    })
-                }
-            />
-        }
-
-        {
-            state.isOpened &&
-            <IoIosArrowDropup
-                onClick={
-                    () => setState({
-                        isOpened: false,
-                        renameText: props.type.name
-                    })
-                }
-            />
-        }
 
         {
             state.isOpened &&
             <div className="typeDetailContent">
                 <input
+                    size={4}
                     className="typeDetailRename"
                     type="text"
-                    value={state.renameText}
+                    value={"rename"}
                     onChange={
                         (event) => setState({
                             renameText: event.target.value,
@@ -61,7 +48,7 @@ function TypeDetail(props) {
                         }
                     }
                 >
-                    Rename
+                    {"->"}
                 </button>
             </div>
         }
