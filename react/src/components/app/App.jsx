@@ -22,13 +22,7 @@ function App() {
     }
 
     return <>
-        <h1
-            id="title"
-        >
-            <u>
-               JDL Editor
-            </u>
-        </h1>
+
         <div id="app">
 
 
@@ -47,9 +41,6 @@ function App() {
 
         </div>
 
-        <footer id={"footer"}>
-
-        </footer>
 
     </>
 }

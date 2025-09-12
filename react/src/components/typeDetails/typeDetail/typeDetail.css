@@ -1,12 +1,15 @@
 .typeDetail {
     /*min-width: 10vw;*/
     padding: 3%;
-    font-size: 120%;
-    margin-right: 1vw;
-    margin-bottom: 2vh;
+    /*font-size: 120%;*/
+    /*margin-right: 1vw;*/
+    margin-top: 1vh;
+    margin-right: 1vh;
     vertical-align: top;
-    display: inline-block;
+    display: block;
+    /*width: fit-content;*/
     border: 1px solid black;
+    /*width: 10vw;*/
     /*border-radius: 0px;*/
 }
 

@@ -5,7 +5,9 @@ import './about.css'
 function About() {
 
 
-    return <div id={"about"}>
+    return <div id={"about_wrapper"}><div id={"about"}>
+
+        <h1>JDL</h1>
         <p>
             <strong>JDL</strong>, or JSON Doodling Language, is an attempt to
             standardize how we create and communicate JSON schemas.
@@ -82,8 +84,8 @@ Book -> {
         Or a full JSON object:
         <pre className={"codesnippet"}>
             <code>{`x -> {
-"key1": type1,
-"key2": type2
+    "key1": type1,
+    "key2": type2
 }
 `}
             </code>
@@ -93,7 +95,7 @@ Book -> {
             The full specification (language grammar) for JDL is <a href={""}>here</a>
         </p>
 
-    </div>
+    </div></div>
 }
 
 export default About;

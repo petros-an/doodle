@@ -4,7 +4,7 @@ import {createTheme} from "@uiw/codemirror-themes";
 const customTheme = createTheme({
     theme: 'dark',
     settings: {
-        background: '#e8fffe',
+        background: 'white',
         foreground: '#000',
         caret: '#000',
         selection: '#036dd626',

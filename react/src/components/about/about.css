@@ -1,9 +1,19 @@
 #about {
-  left: 0;
-
-  /*width: 100vw;*/
-  height: 72.7vh;
-  padding-left: 8vw;
+  padding-left: 3.8vw;
+  padding-right: 3.8vw;
+  padding-top: 4vh;
   overflow-y: auto;
+  width: 71vw;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
+}
+
+#about_wrapper {
+
+  background-color: #333338;
 }
 
