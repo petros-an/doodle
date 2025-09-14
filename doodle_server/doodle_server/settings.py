@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
-    # "django.middleware.security.SecurityMiddleware",
+    "django.middleware.security.SecurityMiddleware",
     # "django.contrib.sessions.middleware.SessionMiddleware",
     # "django.middleware.common.CommonMiddleware",
     # "django.middleware.csrf.CsrfViewMiddleware",
@@ -142,6 +142,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ORIGIN_WHITELIST = [
 #     'http://localhost:8000',
 # ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 DEFAULT_DOODLE_TEXT = """price -> float 
 ProductId -> UUID 

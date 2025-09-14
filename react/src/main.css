@@ -13,10 +13,10 @@ body, html {
 }
 
 .codesnippet {
-   background-color: #e8fffe;
+   background-color: floralwhite;
   width: fit-content;
   padding: 1%;
-  border: 1px solid gray;
+  color: black;
 
 }
 

@@ -10,37 +10,53 @@ function TypeDetail(props) {
     })
 
     return <div
-        className={`typeDetail t-${props.type.type}`}
-    >
-        <span
-            className={"typeDetailTitle"}
-            onClick={
-                () => setState({
+        className={`typeDetail`}
+        onMouseEnter={
+            () => {
+                props.editorRef.selectText(
+                    props.type.from, props.type.to
+                )
+            }
+        }
+        onMouseLeave={
+            () => {
+                props.editorRef.clearSelection()
+            }
+        }
+        onClick={
+            (e) => {
+                if (
+                    e.target.className === 'typeDetailRename'
+                    ||
+                    e.target.className === 'typeDetailRenameButton'
+                ) {
+                    return
+                }
+                setState({
                     isOpened: !state.isOpened,
                     renameText: props.type.name
                 })
+
             }
-            onMouseEnter={
-                () => {
-                    props.editorRef.selectText(
-                        props.type.from, props.type.to
-                    )
-                }
-            }
-            onMouseLeave={
-                () => {
-                    props.editorRef.clearSelection()
-                }
-            }
+        }
+    >
+        <span
+            className={"typeDetailTitle"}
+
         >
-            {props.type.name} : {props.type.type}
+            {/*<span>{props.type.name} : </span>*/}
+            {<span
+                className={`t-${props.type.type}`}
+            >
+                {props.type.name}
+            </span>}
         </span>
 
         {
             state.isOpened &&
             <div className="typeDetailContent">
                 <input
-                    size={4}
+                    size={10}
                     className="typeDetailRename"
                     type="text"
                     value={state.renameText === null ? "rename" : state.renameText}
@@ -53,8 +69,9 @@ function TypeDetail(props) {
                 />
 
                 <button
+                    className={"typeDetailRenameButton"}
                     onClick={
-                        () => {
+                        (e) => {
                             props.onRenameClick(props.type.name, state.renameText)
                         }
                     }

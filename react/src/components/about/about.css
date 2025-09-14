@@ -1,19 +1,46 @@
 #about {
-  padding-left: 3.8vw;
-  padding-right: 3.8vw;
-  padding-top: 4vh;
+  padding-left: 10vw;
+  padding-right: 50vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   overflow-y: auto;
-  width: 71vw;
-  background-color: white;
   margin-left: auto;
   margin-right: auto;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  background-color: #333338;
+  color: white;
 
 }
 
-#about_wrapper {
+#about p, #about ul{
+  line-height: 150%;
+}
 
-  background-color: #333338;
+#about_back_button {
+  position: absolute;
+  top: 9vh;
+  left: 3vw;
+  text-align: center;
+  padding-left: 1vw;
+  width: 5vw;
+  height: 8vh;
+  color: white;
+}
+
+#about_back_button:hover {
+  cursor: pointer;
+  color: lightblue;
+}
+
+#about h1 {
+  font-size: 350%;
+}
+
+
+#about a:visited, #about a {
+  color: cornflowerblue;
+}
+
+#about_wrapper {
+  height: fit-content;
 }
 
