@@ -11,5 +11,5 @@ docker push petrosan/doodle_backend:latest
 
 cd ..
 
-ssh "$deploy_host" "cd doodle; docker compose up -d --pull always"
+ssh petros@"$deploy_host" "cd doodle; docker compose up -d --pull always"
 
