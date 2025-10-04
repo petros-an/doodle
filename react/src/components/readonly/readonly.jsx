@@ -2,6 +2,11 @@ import React, {useEffect} from 'react';
 import './readonly.css'
 import {useParams} from "react-router-dom";
 import DoodleService from "../../services/doodle.js";
+import customTheme from "../../editor/themes/main.js";
+import JSLLanguageSupport from "../../language/jsl.js";
+import JSLSyntaxHighlighting from "../../editor/highlighting/highlighting.js";
+import {EditorView} from "@codemirror/view";
+import CodeMirror from '@uiw/react-codemirror';
 
 function Readonly() {
     const [state, setState] = React.useState(
@@ -36,12 +41,21 @@ function Readonly() {
         return <div>Loading...</div>
     }
 
-    return <pre className={"codesnippet"} id={"readonly"}>
-        <code>
-            {text}
-        </code>
+    return <>
+        <CodeMirror
+            theme={customTheme}
+            value={text}
+            extensions={
+                [
+                    JSLLanguageSupport,
+                    JSLSyntaxHighlighting,
+                    EditorView.editable.of(false),
+                ]
+            }
+        />
 
-    </pre>
+
+    </>
 
 
 }
