@@ -78,12 +78,27 @@ WSGI_APPLICATION = "doodle_server.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+
+if getenv('SQLITE_DB', 'false') == 'true':
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': getenv('POSTGRES_NAME', 'app'),
+            'USER': getenv('POSTGRES_USER', 'postgres'),
+            'PASSWORD': getenv('POSTGRES_PASSWORD', 'postgres'),
+            'HOST': getenv('POSTGRES_HOST', 'db'),
+            'PORT': getenv('POSTGRES_PORT', '5432'),
+        }
+    }
+
 
 
 # Password validation

@@ -1,5 +1,5 @@
 cd react
-docker build -t petrosan/doodle_frontend:latest --build-arg VITE_BACKEND_URL=http://172.236.13.62:8000 --no-cache .
+docker build -t petrosan/doodle_frontend:latest --build-arg VITE_BACKEND_URL=https://172.236.13.62:8000 --no-cache .
 
 cd ..
 
