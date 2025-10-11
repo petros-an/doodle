@@ -7,6 +7,7 @@ import JSLLanguageSupport from "../../language/jsl.js";
 import JSLSyntaxHighlighting from "../../editor/highlighting/highlighting.js";
 import {EditorView} from "@codemirror/view";
 import CodeMirror from '@uiw/react-codemirror';
+import {FaExternalLinkAlt} from "react-icons/fa";
 
 function Readonly() {
     const [state, setState] = React.useState(
@@ -41,10 +42,12 @@ function Readonly() {
         return <div>Loading...</div>
     }
 
-    return <>
+    return <div id={"readonly_container"}>
         <CodeMirror
             theme={customTheme}
             value={text}
+            height="100vh"
+            width="100vw"
             extensions={
                 [
                     JSLLanguageSupport,
@@ -53,9 +56,22 @@ function Readonly() {
                 ]
             }
         />
+        <div id={"readonly_footer"}>
+            {/*<h3>TEST</h3>*/}
+            <strong>
+                Created with
 
+                <a
+                    href={`https://petros-an.com/editor/${doodleId}`}
+                    target="_top"
+                >
+                    {" JSONDoodle "}
+                    <FaExternalLinkAlt />
+                </a>
+            </strong>
+        </div>
 
-    </>
+    </div>
 
 
 }
