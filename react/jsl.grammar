@@ -20,7 +20,12 @@
     L_BRACKET { '\[' }
     R_BRACKET { '\]' }
 
-    FAKLITERAL { '"'$[a-zA-Z_]+'"' }
+    FAKLITERAL {
+      QUOTE (
+        !["\\]
+        | "\\"
+      )* QUOTE
+    }
     IntLiteral { $[0-9]+ }
     FloatLiteral { $[0-9]+ '.' $[0-9]+ }
     BoolLiteral { 'true' | 'false' }
